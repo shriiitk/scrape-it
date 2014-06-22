@@ -1,9 +1,11 @@
 {
-    "name": "scrape-it",
-    "description": "TBD",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "express": "3.x"
-    }
+  "name": "scrape-it",
+  "description": "TBD",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "mongoose": "~3.8.12",
+    "log4js": "~0.6.14"
+  }
 }

@@ -19,6 +19,8 @@ app.all('*', function(req, res, next) {
 // Service end points
 app.get('/testwait', handler.waitLong);
 
+app.post('/recipe', handler.createRecipe);
+
 // Port config
 app.listen(3001);
 console.log('Listening on port 3001...');

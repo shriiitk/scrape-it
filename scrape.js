@@ -29,6 +29,15 @@ var scrapeUrl = function(uri){
 		recipe.instructions = $(".directions-content").text();
 		recipe.video = $("object").attr("data");
 	    console.log(JSON.stringify(recipe.tags));
+	    
+	    request.post({
+		    uri		:"http://localhost:3001/recipe",
+		    headers	:{'content-type': 'application/json'},
+		    body	:JSON.stringify(recipe)
+		    },function(err,res,body){
+		        // console.log(body);
+		        console.log(res.statusCode);
+		});
 	    recipes.push(recipe);
 	});
 };
