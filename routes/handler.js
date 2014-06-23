@@ -1,5 +1,6 @@
 var log4js = require('log4js');
-var logger = log4js.getLogger();
+log4js.configure('my_log4js_configuration.json', { reloadSecs: 60 });
+var logger = log4js.getLogger('scrape-it');
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost');
@@ -21,7 +22,7 @@ var recipeSchema = mongoose.Schema({
 var Recipe = mongoose.model('Recipe', recipeSchema);
 
 var tagsSchema = mongoose.Schema({
-    title	: { type: String, required: true, unique: true, trim: true }
+    title	: { type: String, required: true, unique: true, trim: true, uppercase: true, }
 });
 var Tag = mongoose.model('Tag', tagsSchema);
 

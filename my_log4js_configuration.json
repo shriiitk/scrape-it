@@ -1,0 +1,9 @@
+{ 
+	"appenders": [ {
+	    "type": "dateFile",
+	    "filename": "cook.log",
+	    "pattern": "-yyyy-MM-dd",
+	    "alwaysIncludePattern": true,
+	    "category": "scrape-it"
+  	} ]
+}

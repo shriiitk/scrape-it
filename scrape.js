@@ -35,8 +35,7 @@ var scrapeUrl = function(uri){
 		    headers	:{'content-type': 'application/json'},
 		    body	:JSON.stringify(recipe)
 		    },function(err,res,body){
-		        // console.log(body);
-		        console.log(res.statusCode);
+		        console.log(body);
 		});
 	    recipes.push(recipe);
 	});
