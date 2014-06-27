@@ -24,10 +24,10 @@ var scrapeUrl = function(uri){
 	    recipe.tags = [];
 	    recipe.url = options.url;
 	    $(".table-striped td.name").each(function(idx) {
-	    	recipe.tags.push($(this).text());
+	    	recipe.tags.push($(this).text().trim());
 		});
-		recipe.instructions = $(".directions-content").text();
-		recipe.video = $("object").attr("data");
+		recipe.instructions = $(".directions-content").text().trim();
+		recipe.video = $("object").attr("data").trim();
 	    console.log(JSON.stringify(recipe.tags));
 	    
 	    request.post({
