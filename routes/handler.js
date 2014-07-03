@@ -12,7 +12,7 @@ db.once('open', function callback () {
 });
 
 var recipeSchema = mongoose.Schema({
-    title	: { type: String, required: true, unique: true, trim: true },
+    title	: { type: String, required: true, unique: true, trim: true, uppercase: true },
     tags	: [String],
     url		: String,
     video	: String,
@@ -23,7 +23,7 @@ var recipeSchema = mongoose.Schema({
 var Recipe = mongoose.model('Recipe', recipeSchema);
 
 var tagsSchema = mongoose.Schema({
-    title	: { type: String, required: true, unique: true, trim: true, uppercase: true, }
+    title	: { type: String, required: true, unique: true, trim: true, uppercase: true }
 });
 var Tag = mongoose.model('Tag', tagsSchema);
 
