@@ -3,7 +3,8 @@ log4js.configure('my_log4js_configuration.json', { reloadSecs: 60 });
 var logger = log4js.getLogger('scrape-it');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost');
+//mongoose.connect('mongodb://localhost');
+mongoose.connect('mongodb://cookoousr:cookoousr1$@ds045089.mongolab.com:45089/cookoo');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {

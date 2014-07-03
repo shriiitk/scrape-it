@@ -26,8 +26,14 @@ var scrapeUrl = function(uri){
 	    $(".table-striped td.name").each(function(idx) {
 	    	recipe.tags.push($(this).text().trim());
 		});
-		recipe.instructions = $(".directions-content").text().trim();
-		recipe.video = $("object").attr("data").trim();
+		recipe.instructions = $(".directions-content").text();
+		if(recipe.instructions != undefined && recipe.instructions != ""){
+			recipe.instructions = recipe.instructions.trim();
+		}
+		recipe.video = $("object").attr("data");
+		if(recipe.video != undefined && recipe.video != ""){
+			recipe.video = recipe.video.trim();
+		}
 	    console.log(JSON.stringify(recipe.tags));
 	    
 	    request.post({
@@ -67,7 +73,7 @@ parser.addListener('end', function(result) {
 });
 
 // location of sitemap xml
-fs.readFile(__dirname + '/../small.xml', function(err, data) {
+fs.readFile(__dirname + '/content/small.xml', function(err, data) {
     parser.parseString(data);
 });
 
