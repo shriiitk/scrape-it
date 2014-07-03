@@ -41,18 +41,29 @@ exports.createRecipe = function(req, res){
 	var o = new Recipe(req.body);
 	logger.debug(o.title);
 	o.save(function (err, o) {
-	  if (err) return logger.error(err);
+	  if (err) {
+	  	logger.error(err);
+	  	console.log(" Recipe save error");
+	  	res.send(500, err);
+	  } else {
+	  	var tags = req.body.tags;
+		var len = tags.length;
+		for(var i=0; i<len; i++){
+			var tag = new Tag({title : tags[i]});
+			tag.save(function (err, o) {
+			  	if (err && (11000 === err.code || 11001 === err.code)) { 
+					logger.error(err);
+			  	}
+			  	if(err) {
+			  		console.log("tag save error", err);
+			  	} else {
+			  		console.log("tag save success");
+			  	}
+			});
+		}
+		res.send(201);
+	  }
 	});
 	
-	var tags = req.body.tags;
-	var len = tags.length;
-	for(var i=0; i<len; i++){
-		var tag = new Tag({title : tags[i]});
-		tag.save(function (err, o) {
-		  	if (err && (11000 === err.code || 11001 === err.code)) { 
-				logger.error(err);
-		  	}
-		  	logger.error("Some Error", err);
-		});
-	}
+	
 };

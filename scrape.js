@@ -35,14 +35,20 @@ var scrapeUrl = function(uri){
 			recipe.video = recipe.video.trim();
 		}
 	    console.log(JSON.stringify(recipe.tags));
-	    
+	    var data = JSON.stringify(recipe);
 	    request.post({
 		    uri		:"http://localhost:3001/recipe",
-		    headers	:{'content-type': 'application/json'},
-		    body	:JSON.stringify(recipe)
+		    headers	:{'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(data)},
+		    body	:data,
+		    timeout :2000
 		    },function(err,res,body){
-		        console.log(body);
-		});
+		    	if(err) {
+		    		console.log("ERROR",err);
+		    	} else {
+		    		console.log("SUCCESS");
+		    	}
+			}
+		);
 	    recipes.push(recipe);
 	});
 };

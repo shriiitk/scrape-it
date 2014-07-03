@@ -7,6 +7,15 @@ app.configure(function () {
     app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
     app.use(express.json());
 	app.use(express.urlencoded());
+	app.use(function (error, req, res, next) {
+	  if (!error) {
+	    next();
+	  } else {
+	    console.error(error.stack);
+	    console.log("sending error from use");
+	    res.send(500);
+	  }
+	});
 });
 // All services are now CORS enabled
 app.all('*', function(req, res, next) {
