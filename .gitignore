@@ -25,3 +25,5 @@ build/Release
 node_modules
 .project
 cook.log*
+untitled.*
+.gitignore
