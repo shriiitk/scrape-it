@@ -26,4 +26,5 @@ node_modules
 .project
 cook.log*
 untitled.*
+*sublime*
 .gitignore
