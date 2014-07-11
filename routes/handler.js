@@ -16,6 +16,7 @@ var recipeSchema = mongoose.Schema({
     tags	: [String],
     url		: String,
     video	: String,
+    chef	: String,
     instructions	: String,
     createdOn		: Date,
     modifiedOn		: Date,

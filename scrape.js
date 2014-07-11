@@ -23,6 +23,7 @@ var scrapeUrl = function(uri){
 	    recipe.title = $(".video-name").text();
 	    recipe.tags = [];
 	    recipe.url = options.url;
+	    recipe.chef = "vahrehvah Sanjay Thumma";
 	    $(".table-striped td.name").each(function(idx) {
 	    	recipe.tags.push($(this).text().trim());
 		});
