@@ -54,14 +54,24 @@ var scrapeTdUrl = function(uri){
 	});
 };
 
-var startId = 4028;
-for(var i=0; i<2; i++){
-	var id = startId + i;
-	var url = "http://www.tarladalal.com/PrintRecipe.aspx?recipeid="+id;
+try {
+    var fileJSON = require('./content/td_american.json');
+} catch(err) {
+        return {};
+}
+
+// console.log(fileJSON[10]);
+
+// return;
+
+for(var i=0; i<10; i++){
+	var url = "http://www.tarladalal.com/PrintRecipe.aspx?recipeid="+fileJSON[i].id;
 	urls.push(url);
 }
 
-for(var j=0; j<2; j++){
+console.log(JSON.stringify(urls));
+
+for(var j=1; j<2; j++){
 	try{
 		console.log("url", urls[j]);
 		var t = 30000*j;
