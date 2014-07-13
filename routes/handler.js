@@ -37,13 +37,11 @@ exports.waitLong = function(req, res) {
 };
 
 exports.createRecipe = function(req, res){
-	// logger.debug(req.body);
-	// logger.debug(req.body.tags);
 	var o = new Recipe(req.body);
 	var tags = o.tags;
 	var uniqueTags = _.uniq(tags, false);
 	o.tags = uniqueTags;
-	console.log(o);
+	console.log(o.title);
 	o.save(function (err, o) {
 	  if (err) {
 	  	logger.error(err);

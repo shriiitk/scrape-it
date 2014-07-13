@@ -71,7 +71,7 @@ for(var i=0; i<10; i++){
 
 console.log(JSON.stringify(urls));
 
-for(var j=1; j<2; j++){
+for(var j=1; j<10; j++){
 	try{
 		console.log("url", urls[j]);
 		var t = 30000*j;
