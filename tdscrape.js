@@ -3,6 +3,19 @@ var cheerio = require('cheerio');
 var recipes = [];
 var urls = [];
 
+var getCleanTitle = function(title){
+	var a = title.toUpperCase();
+	// Removing names from recipe titles
+	if(a.indexOf("BY") > 0){
+		a = a.substring(0, a.indexOf("BY")).trim();
+	}
+	// Removing content in brackets
+	if(a.indexOf("(") > 0){
+		a = a.substring(0, a.indexOf("(")).trim();
+	}
+	return a;
+};
+
 var scrapeTdUrl = function(uri){
 	console.log("Starting on "+uri);
 	var options = {
@@ -24,7 +37,7 @@ var scrapeTdUrl = function(uri){
 	    	console.log("Title not found so quitting");
 	    	return;
 	    }
-	    recipe.title = title;
+	    recipe.title = getCleanTitle(title);
 	    recipe.url = options.url;
 	    recipe.chef = "Tarla Dalal";
 	    recipe.tags = [];
@@ -71,7 +84,7 @@ for(var i=0; i<10; i++){
 
 console.log(JSON.stringify(urls));
 
-for(var j=1; j<10; j++){
+for(var j=0; j<3; j++){
 	try{
 		console.log("url", urls[j]);
 		var t = 30000*j;
