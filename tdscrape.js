@@ -77,7 +77,7 @@ try {
 
 // return;
 
-for(var i=0; i<10; i++){
+for(var i=0; i<20; i++){
 	var url = "http://www.tarladalal.com/PrintRecipe.aspx?recipeid="+fileJSON[i].id;
 	urls.push(url);
 }
