@@ -35,10 +35,11 @@ var scrapeUrl = function(uri){
 		if(recipe.video != undefined && recipe.video != ""){
 			recipe.video = recipe.video.trim();
 		}
+		console.log(recipe.title);
 	    console.log(JSON.stringify(recipe.tags));
 	    var data = JSON.stringify(recipe);
 	    request.post({
-		    uri		:"http://localhost:3001/recipe",
+		    uri		:"http://calm-fjord-1903.herokuapp.com/recipe",
 		    headers	:{'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(data)},
 		    body	:data,
 		    timeout :2000
