@@ -1,6 +1,6 @@
 var express = require('express'),
     handler = require('./routes/handler');
- 
+var port       = process.env.PORT || 3001; 
 var app = express();
 
 app.configure(function () {
@@ -31,5 +31,5 @@ app.get('/testwait', handler.waitLong);
 app.post('/recipe', handler.createRecipe);
 
 // Port config
-app.listen(3001);
-console.log('Listening on port 3001...');
+app.listen(port);
+console.log('Listening on port '+port);
