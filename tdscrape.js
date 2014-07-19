@@ -51,7 +51,7 @@ var scrapeTdUrl = function(uri){
 	    console.log(JSON.stringify(recipe));
 	    var data = JSON.stringify(recipe);
 	    request.post({
-		    uri		:"http://localhost:3001/recipe",
+		    uri		:"http://calm-fjord-1903.herokuapp.com/recipe",
 		    headers	:{'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(data)},
 		    body	:data,
 		    timeout :2000
@@ -77,7 +77,7 @@ try {
 
 // return;
 
-for(var i=0; i<20; i++){
+for(var i=0; i<19; i++){
 	var url = "http://www.tarladalal.com/PrintRecipe.aspx?recipeid="+fileJSON[i].id;
 	urls.push(url);
 }
