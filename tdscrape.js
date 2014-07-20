@@ -68,7 +68,7 @@ var scrapeTdUrl = function(uri){
 };
 
 try {
-    var fileJSON = require('./content/td_american.json');
+    var fileJSON = require('./content/td_french.json');
 } catch(err) {
         return {};
 }
@@ -77,7 +77,7 @@ try {
 
 // return;
 
-for(var i=0; i<19; i++){
+for(var i=0; i<50; i++){
 	var url = "http://www.tarladalal.com/PrintRecipe.aspx?recipeid="+fileJSON[i].id;
 	urls.push(url);
 }
