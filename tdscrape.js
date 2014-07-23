@@ -68,7 +68,7 @@ var scrapeTdUrl = function(uri){
 };
 
 try {
-    var fileJSON = require('./content/td_french.json');
+    var fileJSON = require('./content/td_chinese.json');
 } catch(err) {
         return {};
 }
@@ -78,8 +78,12 @@ try {
 // return;
 
 for(var i=0; i<50; i++){
-	var url = "http://www.tarladalal.com/PrintRecipe.aspx?recipeid="+fileJSON[i].id;
-	urls.push(url);
+	if(fileJSON[i])	{
+		var url = "http://www.tarladalal.com/PrintRecipe.aspx?recipeid="+fileJSON[i].id;
+		urls.push(url);
+	} else {
+		break;
+	}
 }
 
 console.log(JSON.stringify(urls));
