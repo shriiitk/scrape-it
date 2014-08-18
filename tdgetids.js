@@ -34,7 +34,7 @@ var scrapeTdUrl = function(uri){
 
 		console.log(JSON.stringify(ids));
 
-		var outputFilename = './content/td_french.json';
+		var outputFilename = './content/td_thai.json';
 
 		fs.writeFile(outputFilename, JSON.stringify(ids, null, 4), function(err) {
 		    if(err) {
@@ -49,7 +49,7 @@ var scrapeTdUrl = function(uri){
 var startId = 1;
 for(var i=0; i<10; i++){
 	var id = startId + i;
-	var url = "http://www.tarladalal.com/recipes-for-french-124?pageindex="+id;
+	var url = "http://www.tarladalal.com/recipes-for-thai-87?pageindex="+id;
 	urls.push(url);
 }
 

@@ -10,9 +10,9 @@ var getCleanTitle = function(title){
 		a = a.substring(0, a.indexOf("BY")).trim();
 	}
 	// Removing content in brackets
-	if(a.indexOf("(") > 0){
-		a = a.substring(0, a.indexOf("(")).trim();
-	}
+	// if(a.indexOf("(") > 0){
+	// 	a = a.substring(0, a.indexOf("(")).trim();
+	// }
 	return a;
 };
 
@@ -68,7 +68,7 @@ var scrapeTdUrl = function(uri){
 };
 
 try {
-    var fileJSON = require('./content/td_chinese.json');
+    var fileJSON = require('./content/td_italian.json');
 } catch(err) {
         return {};
 }
