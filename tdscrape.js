@@ -39,7 +39,7 @@ var scrapeTdUrl = function(uri){
 	    }
 	    recipe.title = getCleanTitle(title);
 	    recipe.url = options.url;
-	    recipe.chef = "Tarla Dalal";
+	    recipe.chef = "Tarla Dalal (Italian)";
 	    recipe.tags = [];
 	    $("div#rcpinglist a").each(function(idx) {
 	    	recipe.tags.push($(this).text().trim());
