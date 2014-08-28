@@ -7,8 +7,5 @@
 		xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
 		http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
 >
-<url> <loc>http://www.vahrehvah.com/aaloo-baingan</loc> <changefreq>monthly</changefreq> </url>
-<url> <loc>http://www.vahrehvah.com/aaloo-carrot-pickle-1</loc> <changefreq>monthly</changefreq> </url>
-<url> <loc>http://www.vahrehvah.com/aaloo-cholay</loc> <changefreq>monthly</changefreq> </url>
-<url> <loc>http://www.vahrehvah.com/aaloo-ka-raita</loc> <changefreq>monthly</changefreq> </url>
+
 </urlset>
