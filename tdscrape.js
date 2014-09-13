@@ -20,7 +20,7 @@ var scrapeTdUrl = function(uri){
 	console.log("Starting on "+uri);
 	var options = {
 	    url: uri+'',
-	    timeout: 20000
+	    timeout: 30000
 	};
 	request(options, function(err, resp, body) {
 		console.log(new Date());
@@ -39,7 +39,7 @@ var scrapeTdUrl = function(uri){
 	    }
 	    recipe.title = getCleanTitle(title);
 	    recipe.url = options.url;
-	    recipe.chef = "Tarla Dalal (Italian)";
+	    recipe.chef = "Tarla Dalal ( Lebanese )";
 	    recipe.tags = [];
 	    $("div#rcpinglist a").each(function(idx) {
 	    	recipe.tags.push($(this).text().trim());
@@ -68,7 +68,7 @@ var scrapeTdUrl = function(uri){
 };
 
 try {
-    var fileJSON = require('./content/td_italian.json');
+    var fileJSON = require('./content/td_lebanese.json');
 } catch(err) {
         return {};
 }
@@ -77,7 +77,7 @@ try {
 
 // return;
 
-for(var i=0; i<50; i++){
+for(var i=0; i<100; i++){
 	if(fileJSON[i])	{
 		var url = "http://www.tarladalal.com/PrintRecipe.aspx?recipeid="+fileJSON[i].id;
 		urls.push(url);
